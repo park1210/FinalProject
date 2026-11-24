@@ -1,0 +1,36 @@
+# ========================================
+# Django / Python
+# ========================================
+
+Service_System/.venv/
+Service_System/**/__pycache__/
+Service_System/.coverage
+Service_System/htmlcov/
+Service_System/.pytest_cache/
+
+# ========================================
+# Android
+# ========================================
+
+Client_System/.gradle/
+Client_System/.idea/
+Client_System/local.properties
+Client_System/**/build/
+
+# ========================================
+# YOLO
+# ========================================
+
+Edge_System/.venv/
+Edge_System/venv/
+Edge_System/runs/
+Edge_System/**/__pycache__/
+Edge_System/.github
+
+# ========================================
+# General
+# ========================================
+
+*.pyc
+.DS_Store
+Thumbs.db
