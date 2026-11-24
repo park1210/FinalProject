@@ -1,12 +1,36 @@
 # ========================================
-# Django / Python
+# Python / Django
 # ========================================
 
+__pycache__/
+*.py[cod]
+*.pyo
+
 Service_System/.venv/
+Service_System/venv/
 Service_System/**/__pycache__/
 Service_System/.coverage
 Service_System/htmlcov/
 Service_System/.pytest_cache/
+
+# Django runtime files
+Service_System/db.sqlite3
+Service_System/media/
+Service_System/staticfiles/
+
+
+# ========================================
+# Environment variables / Secrets
+# ========================================
+
+.env
+.env.*
+*.env
+
+Service_System/.env
+Edge_System/.env
+Client_System/.env
+
 
 # ========================================
 # Android
@@ -16,21 +40,49 @@ Client_System/.gradle/
 Client_System/.idea/
 Client_System/local.properties
 Client_System/**/build/
+Client_System/captures/
+Client_System/.externalNativeBuild/
+Client_System/.cxx/
+
 
 # ========================================
-# YOLO
+# YOLO / Edge
 # ========================================
 
 Edge_System/.venv/
 Edge_System/venv/
-Edge_System/runs/
 Edge_System/**/__pycache__/
-Edge_System/.github
+
+# inference output
+Edge_System/runs/
+
+# pretrained / trained weights
+*.pt
+*.pth
+*.onnx
+*.engine
+
+# temporary downloaded game images
+Edge_System/temp/
+Edge_System/downloads/
+
 
 # ========================================
-# General
+# IDE / OS
 # ========================================
 
-*.pyc
+.vscode/
+.idea/
+
 .DS_Store
 Thumbs.db
+desktop.ini
+
+
+# ========================================
+# Logs / temporary files
+# ========================================
+
+*.log
+*.tmp
+*.temp
