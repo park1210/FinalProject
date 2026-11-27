@@ -10,7 +10,10 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/6.0/ref/settings/
 """
 
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,10 +23,18 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-of3ij*#ideq(9y+_#hdr5u=&b@_3jr_hnsp(#y+e*dpd_m*!hr'
+load_dotenv(
+    dotenv_path=BASE_DIR / ".env",
+    override=False,
+)
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+# Do not provide a default secret key.
+SECRET_KEY = os.environ["DJANGO_SECRET_KEY"]
+
+# Local development: True
+# Deployment: False
+DEBUG = os.getenv("DJANGO_DEBUG", "False").lower() == "true"
+
 
 ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '10.0.2.2', '.pythonanywhere.com']
 
@@ -38,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'blog',
+    'game',
     'rest_framework',
     'rest_framework.authtoken',
 ]
